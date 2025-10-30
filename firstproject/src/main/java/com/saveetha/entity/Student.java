@@ -31,4 +31,19 @@ public class Student {
         return id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setBranch(String branch) {
+        this.branch = branch;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

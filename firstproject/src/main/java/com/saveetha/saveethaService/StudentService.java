@@ -34,4 +34,16 @@ public class StudentService {
           studentRepo.deleteById(id);
           return "Student deleted successfully";
     }
+
+    public Student updateStudent(int id, Student student) {
+          Student existingStudent=studentRepo.findById(id).get();
+          if (existingStudent==null){
+              return null;
+          }
+          existingStudent.setBranch(student.getBranch());
+          existingStudent.setEmail(student.getEmail());
+          existingStudent.setName(student.getName());
+          studentRepo.save(existingStudent);
+          return existingStudent;
+    }
 }

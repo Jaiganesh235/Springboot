@@ -2,6 +2,7 @@ package com.saveetha.controllers;
 
 import com.saveetha.entity.Student;
 import com.saveetha.saveethaService.StudentService;
+import jdk.javadoc.doclet.StandardDoclet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,5 +44,10 @@ public class SaveethaController {
     @DeleteMapping("deletestudent/{id}")
     public String deleteStudent(@PathVariable int id){
         return studentService.deleteStudent(id);
+    }
+
+    @PutMapping("updatestudent/{id}")
+    public Student updateStudent(@PathVariable int id, @RequestBody Student student){
+        return studentService.updateStudent(id,student);
     }
 }
